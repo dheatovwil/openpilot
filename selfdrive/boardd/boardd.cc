@@ -180,7 +180,9 @@ bool usb_connect() {
 
   usb_close(dev_handle);
 
-  dev_handle = libusb_open_device_with_vid_pid(ctx, 0xbbaa, 0xddcc);
+  //dev_handle = libusb_open_device_with_vid_pid(ctx, 0xbbaa, 0xddcc);
+  dev_handle = libusb_open_device_with_vid_pid(ctx, 0x1d6b, 0x0002);
+
   if (dev_handle == NULL) { goto fail; }
 
   err = libusb_set_configuration(dev_handle, 1);
